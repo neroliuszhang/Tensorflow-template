@@ -33,28 +33,28 @@ class Dataset(object):
     def sample_num(self):
         return self._config._sample_num
 
-    def ReadData(self):
+    def __ReadData(self):
         #Todo
         image = np.zeros([1])
         image.reshape(self._config.shape)
         return image
 
-    def ReadLabel(self):
+    def __ReadLabel(self):
         #Todo
         label = np.zeros([1])
         return label
 
-    def DataTransform(self, image):
+    def __DataTransform(self, image):
         #Todo
         return image
 
-    def LabelTransform(self, label):
+    def __LabelTransform(self, label):
         # Todo
         return label
 
     def NextBatch(self):
         #Todo
-        image = self.ReadData()
-        image = self.DataTransform(image)
-        label = self.ReadLabel()
+        image = self.__ReadData()
+        image = self.__DataTransform(image)
+        label = self.__ReadLabel()
         return image, label
